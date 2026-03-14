@@ -35,6 +35,7 @@ Playwright and TypeScript.
 
 # 📂 Project Structure
 
+```text
 pw-test-lab
 │
 ├── tests
@@ -65,6 +66,7 @@ pw-test-lab
 ├── tsconfig.json
 ├── .env
 └── README.md
+```
 
 ------------------------------------------------------------------------
 
