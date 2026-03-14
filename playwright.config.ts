@@ -9,7 +9,7 @@ export default defineConfig({
 
   reporter: [
     ['list'],
-    ['html'],
+    ['html', { open: 'never' }],
     ['allure-playwright']
   ],
 

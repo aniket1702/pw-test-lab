@@ -138,6 +138,10 @@ Open Playwright HTML report:
 
     npx playwright show-report
 
+Open Playwright Allure report:
+
+    allure open allure-report
+
 ------------------------------------------------------------------------
 
 # 🐞 Debugging Tests
