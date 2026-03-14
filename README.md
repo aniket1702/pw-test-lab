@@ -4,8 +4,8 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-Framework-blue?logo=typescript)
 ![Node](https://img.shields.io/badge/Node.js-Runtime-success?logo=node.js)
 
-A scalable and maintainable **UI automation framework** built using
-**Playwright and TypeScript**.
+A scalable and maintainable UI automation framework built using
+Playwright and TypeScript.
 
 ------------------------------------------------------------------------
 
@@ -17,175 +17,134 @@ A scalable and maintainable **UI automation framework** built using
 -   Cross-browser testing
 -   Parallel execution
 -   HTML test reports
--   CI/CD ready
+-   Allure reporting
+-   CI/CD ready with GitHub Actions
 
 ------------------------------------------------------------------------
 
-# 🧰 Tech Stack
+# 🛠 Tech Stack
 
-  Tool         Purpose
-  ------------ ---------------------------
-  Playwright   UI Automation
-  TypeScript   Type-safe scripting
-  Node.js      Runtime
-  dotenv       Environment configuration
+-   Playwright -- UI Automation
+-   TypeScript -- Type-safe scripting
+-   Node.js -- Runtime
+-   dotenv -- Environment configuration
+-   GitHub Actions -- CI/CD
+-   GitHub Pages -- Report Hosting
 
 ------------------------------------------------------------------------
 
 # 📂 Project Structure
 
-    pw-test-lab
-    │
-    ├── tests
-    │   └── login
-    │        └── login.spec.ts
-    │
-    ├── src
-    │   ├── config
-    │   │    └── env.config.ts
-    │   │
-    │   ├── constants
-    │   │    └── constants.ts
-    │   │
-    │   ├── fixtures
-    │   │    └── test.fixture.ts
-    │   │
-    │   ├── locators
-    │   │    └── login.locators.ts
-    │   │
-    │   ├── pages
-    │   │    ├── base.page.ts
-    │   │    │  
-    │   │    └── login
-    │   │         └── login.page.ts
-    │
-    ├── playwright.config.ts
-    ├── package.json
-    ├── tsconfig.json
-    ├── .env
-    └── README.md
+pw-test-lab
+│
+├── tests
+│   └── login
+│        └── login.spec.ts
+│
+├── src
+│   ├── config
+│   │    └── env.config.ts
+│   │
+│   ├── constants
+│   │    └── constants.ts
+│   │
+│   ├── fixtures
+│   │    └── test.fixture.ts
+│   │
+│   ├── locators
+│   │    └── login.locators.ts
+│   │
+│   ├── pages
+│   │    ├── base.page.ts
+│   │    │  
+│   │    └── login
+│   │         └── login.page.ts
+│
+├── playwright.config.ts
+├── package.json
+├── tsconfig.json
+├── .env
+└── README.md
 
 ------------------------------------------------------------------------
 
-# ⚙️ Prerequisites
+# ⚙️ Installation
 
-Install the following tools:
+## 1️⃣ Clone Repository
 
--   Node.js (v18 or higher)
--   npm
--   Git
+git clone `<repository-url>`{=html}
 
-Verify installation:
+## 2️⃣ Install Dependencies
 
-    node -v
-    npm -v
+npm install
 
-------------------------------------------------------------------------
+## 3️⃣ Install Browsers
 
-# 📥 Installation
-
-### 1️⃣ Clone the repository
-
-    git clone <repository-url>
-
-### 2️⃣ Navigate to project directory
-
-    cd pw-test-lab
-
-### 3️⃣ Install dependencies
-
-    npm install
-
-### 4️⃣ Install Playwright browsers
-
-    npx playwright install
+npx playwright install
 
 ------------------------------------------------------------------------
 
 # ▶️ Running Tests
 
-### Run all tests
-
-    npm run test
+npm run test
 
 or
 
-    npx playwright test
+npx playwright test
 
 ------------------------------------------------------------------------
 
-### Run tests in headed mode
+# 📊 Reports
 
-    npx playwright test --headed
+### Playwright HTML Report
 
-------------------------------------------------------------------------
+npx playwright show-report
 
-### Run tests in UI mode
+### Allure Report
 
-    npx playwright test --ui
-
-------------------------------------------------------------------------
-
-### Run a specific test
-
-    npx playwright test tests/login/login.spec.ts
+allure open allure-report
 
 ------------------------------------------------------------------------
 
-# 📊 Test Reports
+# 🚀 GitHub Actions + Allure Deployment
 
-Open Playwright HTML report:
+On every push to `main`:
 
-    npx playwright show-report
+1.  Tests run automatically
+2.  Allure report is generated
+3.  Report is deployed to GitHub Pages
 
-Open Playwright Allure report:
+### Workflow Location:
 
-    allure open allure-report
+.github/workflows/playwright.yml
 
-------------------------------------------------------------------------
+### Deployment Tool Used:
 
-# 🐞 Debugging Tests
+peaceiris/actions-gh-pages@v4
 
-Run tests in debug mode:
+### GitHub Pages Setup:
 
-    npx playwright test --debug
+Settings → Pages → Branch: gh-pages Folder: /(root)
 
-------------------------------------------------------------------------
+### Report URL:
 
-# 🧪 Test Design Pattern
-
-This framework uses **Page Object Model (POM)**.
-
-Structure:
-
-    Tests
-     ↓
-    Page Objects
-     ↓
-    Locators
-
-Benefits:
-
--   Better code reuse
--   Easy maintenance
--   Cleaner test scripts
+https://`<your-username>`{=html}.github.io/`<repository-name>`{=html}/
 
 ------------------------------------------------------------------------
 
-# 🚀 CI/CD Integration
+# 🧪 Framework Design
 
-This framework can integrate with:
+Uses Page Object Model (POM):
 
--   Jenkins
--   GitHub Actions
--   GitLab CI
--   Azure DevOps
+Tests → Page Objects → Locators
+
+Benefits: - Maintainable - Scalable - Clean structure
 
 ------------------------------------------------------------------------
 
 # 👨‍💻 Author
 
-**Aniket Maurya**\
+Aniket Maurya\
 SDET / QA Automation Engineer
 
 ------------------------------------------------------------------------
