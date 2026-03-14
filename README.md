@@ -54,8 +54,8 @@ A scalable and maintainable **UI automation framework** built using
     │   │    └── login.locators.ts
     │   │
     │   ├── pages
-    │   │    ├── base
-    │   │    │    └── base.page.ts
+    │   │    ├── base.page.ts
+    │   │    │  
     │   │    └── login
     │   │         └── login.page.ts
     │
@@ -99,18 +99,6 @@ Verify installation:
 ### 4️⃣ Install Playwright browsers
 
     npx playwright install
-
-------------------------------------------------------------------------
-
-# 🔐 Environment Configuration
-
-Create a `.env` file in the root directory.
-
-Example:
-
-    BASE_URL=https://opensource-demo.orangehrmlive.com
-    USERNAME=Admin
-    PASSWORD=admin123
 
 ------------------------------------------------------------------------
 
