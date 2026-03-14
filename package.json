@@ -2,20 +2,15 @@
   "name": "pw-test-lab",
   "version": "1.0.0",
   "main": "index.js",
-  
-"scripts": {
-  "test": "npx playwright test",
- 
-  "allure:generate": "allure generate allure-results --clean -o allure-report",
-  "allure:open": "allure open allure-report",
-  "allure:serve": "allure serve allure-results",
-
-  "test:report": "npx playwright test && allure generate allure-results --clean -o allure-report && allure open allure-report"
-
-}
-
-
-,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -27,5 +22,8 @@
     "allure-playwright": "^3.4.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
   }
 }

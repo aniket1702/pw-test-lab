@@ -2,6 +2,7 @@
 import { Page } from '@playwright/test';
 import { LoginLocators } from "../../locators/login.locators";
 import { BasePage } from "../base.page";
+import { expect } from '../../fixtures/test.fixture';
 
 
 export class LoginPage extends BasePage {
@@ -19,5 +20,9 @@ export class LoginPage extends BasePage {
     await this.click(this.locators.loginButton);
 
   }
+
+  async verifyLoginSuccess() {
+  await expect(this.page).toHaveTitle('OrangeHRM');
+}
 
 }

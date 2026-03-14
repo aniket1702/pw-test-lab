@@ -1,17 +1,19 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
+
 
 export default defineConfig({
   testDir: './tests',
   timeout: 30 * 1000,
-  retries: 1,
+  retries: process.env.CI ? 2 : 1,
+   workers: process.env.CI ? 2 : undefined,
 
   reporter: [
     ['list'],
+    ['html'],
     ['allure-playwright']
   ],
 
   use: {
-    browserName: 'chromium',
     headless: false,
 
   
@@ -27,16 +29,15 @@ export default defineConfig({
     trace: 'on-first-retry'
   },
 
-  // 🚨 ALSO ADD THIS (VERY IMPORTANT)
-  workers: 1,
-
   projects: [
+   {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] }
+    },
+
     {
-      name: 'Chromium',
-      use: {
-        browserName: 'chromium',
-        connectOptions: undefined // DOUBLE override to block selenium
-      }
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] }
     }
   ],
 
