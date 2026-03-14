@@ -7,3 +7,6 @@ export const ENV = {
   USERNAME: process.env.USERNAME!,
   PASSWORD: process.env.PASSWORD!
 };
+if (!ENV.BASE_URL) {
+  throw new Error("BASE_URL is missing");
+}

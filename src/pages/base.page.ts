@@ -1,5 +1,6 @@
 import { Locator, Page, expect } from '@playwright/test';
 import {URL } from '../constants/constants';
+import { ENV } from '../config/env.config';
 
 export class BasePage
 {
@@ -9,9 +10,9 @@ export class BasePage
             this.page=page;
     }
     
-    async navigateTo()
+    async navigateTo():Promise<void>
     {
-        await this.page.goto(URL.baseURL);
+        await this.page.goto(ENV.BASE_URL);
     }
 
     async click(locator: Locator):Promise<void>
