@@ -14,14 +14,14 @@ export default defineConfig({
   ],
 
   use: {
-    headless: false,
+    headless: true,
 
   
     connectOptions: undefined,
 
-    // Force local browser launch only
+  
     launchOptions: {
-      channel: 'chrome' // or remove if you want bundled chromium
+      channel: 'chrome' 
     },
 
     screenshot: 'only-on-failure',
